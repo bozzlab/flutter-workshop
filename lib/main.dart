@@ -126,15 +126,80 @@ void main() => runApp((MaterialApp(
 ),
 );
 
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String result = '0';
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Container(
+          alignment: Alignment.centerRight,
+          child: Text(result, style: TextStyle(),),
+    ),
+    Column(
+      children: <Widget>[
+        Row(
+          children: <Widget>[
+            _buildkeyPadButton(title:'1'),
+            _buildKeyPadButton(
+              title: '2',
+            ),
+            _buildKeyPadButton(
+              title:'3',
+            ),
+            _buildKeyPadButton(
+              title:'+',
+            )
+          ]
+        )
+      ]
+        )
+      ]FlatButton _buildKeyPadButton({String title}) =>
+      FlatButton(child: Text(title),
+          onPressed: (){
+          setState :(){
+          result = result + title;
+        })
+    );
+  }
+}
+
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin:
-      alignment: Alignment.center,
-    color: Colors.white,
-      width: 100,
-      height: 200,
+    return Column(
+      children: <Widget>[
+      Container(
+        alignment: Alignment.centerRight,
+        child: Text('0'),
+    ),
+      Column(
+        children: <Widget>[
+      Row(
+          children : <Widget>[
+            _buildKeyPadButton(),
+          FlatButton(child:,Text('1'),),
+          FlatButton(child:,Text('2'),),
+          FlatButton(child:,Text('3'),),
+          FlatButton(child:,Text('+'),),
+    ],
+    ),
+    )
+    ],
     );
+    )
   }
+  FlatButton _buildKeyPadButton({String title}) =>
+      FlatButton(child: Text(title),
+          onPressed: (){
+          setState :(){
+          result = result + title;
+        })
+});
 }
