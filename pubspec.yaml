@@ -30,6 +30,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  cupertino_icons: ^0.1.2
+  math_expressions: ^2.0.0
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -40,6 +42,16 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/images/
+  fonts:
+    - family: Prompt
+      fonts:
+        - asset: assets/fonts/Prompt-Regular.ttf
+        - asset: assets/fonts/Prompt-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Prompt-Italic.ttf
+          weight: 700
 
   # To add assets to your application, add an assets section, like this:
   # assets:
